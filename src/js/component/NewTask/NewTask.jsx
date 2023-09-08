@@ -1,7 +1,14 @@
 import React from "react";
 import "./newtask.css";
 
-const NewTask = ({ opcionSeleccionada, handleOpcionChange }) => {
+const NewTask = ({
+  opcionSeleccionada,
+  textoInsertado,
+  handleOpcionChange,
+  handleInputChange,
+  getEntireList,
+  addItem,
+}) => {
   return (
     <div className="inputsContainer">
       {/* Comienzo de dropdown */}
@@ -22,14 +29,22 @@ const NewTask = ({ opcionSeleccionada, handleOpcionChange }) => {
       <div>
         <textarea
           className="taskContent"
-          value=""
+          value={textoInsertado}
+          onChange={handleInputChange}
           disabled={opcionSeleccionada === "empezamos"}
         ></textarea>
       </div>
       {/* Fin del input donde escribimos la tarea*/}
       {/* Comienzo del submit*/}
       <div>
-        <input className="submitButton btn" type="submit" value="Add"></input>
+        <input
+          className="submitButton btn"
+          type="submit"
+          value="Add"
+          onClick={() => {
+            addItem(textoInsertado)
+          }}
+        ></input>
       </div>
       {/* Fin del submit*/}
     </div>
