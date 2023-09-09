@@ -6,7 +6,8 @@ import TaskList from "./TaskList";
 const App = () => {
   const [list, setList] = useState([]);
   const [textoInsertado, setTextoInsertado] = useState("");
-  const [opcionSeleccionada, setOpcionSeleccionada] = useState("empezamos");
+  const [prioridadSeleccionada, setPrioridadSeleccionada] =
+    useState("empezamos");
 
   const getList = async () => {
     const response = await fetch(
@@ -18,7 +19,12 @@ const App = () => {
   };
 
   const addItem = async () => {
-    const newItem = { label: textoInsertado, done: false, id: list.length + 1 };
+    const newItem = {
+      label: textoInsertado,
+      done: false,
+      id: list.length + 1,
+      priority: prioridadSeleccionada,
+    };
 
     const options = {
       method: "PUT",
@@ -43,8 +49,8 @@ const App = () => {
     getList(); // Llamar a getList al montar el componente
   }, []);
 
-  const handleOpcionChange = (event) => {
-    setOpcionSeleccionada(event.target.value);
+  const handlePriorityChange = (event) => {
+    setPrioridadSeleccionada(event.target.value);
   };
 
   const handleInputChange = (event) => {
@@ -85,9 +91,9 @@ const App = () => {
       <div className="bigContainer">
         <div className="littleContainer">
           <NewTask
-            opcionSeleccionada={opcionSeleccionada}
+            prioridadSeleccionada={prioridadSeleccionada}
             textoInsertado={textoInsertado}
-            handleOpcionChange={handleOpcionChange}
+            handlePriorityChange={handlePriorityChange}
             handleInputChange={handleInputChange}
             handleButtonClick={handleButtonClick}
           />

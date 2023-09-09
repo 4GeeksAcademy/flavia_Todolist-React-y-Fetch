@@ -2,9 +2,9 @@ import React from "react";
 import "./newtask.css";
 
 const NewTask = ({
-  opcionSeleccionada,
+  prioridadSeleccionada,
   textoInsertado,
-  handleOpcionChange,
+  handlePriorityChange,
   handleInputChange,
   handleButtonClick,
 }) => {
@@ -14,8 +14,8 @@ const NewTask = ({
       <div>
         <select
           name="opciones"
-          value={opcionSeleccionada}
-          onChange={handleOpcionChange}
+          value={prioridadSeleccionada}
+          onChange={handlePriorityChange}
         >
           <option value="empezamos">Select an option</option>
           <option value="high">High Priority</option>
@@ -30,7 +30,7 @@ const NewTask = ({
           className="taskContent"
           value={textoInsertado}
           onChange={handleInputChange}
-          disabled={opcionSeleccionada === "empezamos"}
+          disabled={prioridadSeleccionada === "empezamos"}
         ></textarea>
       </div>
       {/* Fin del input donde escribimos la tarea*/}
