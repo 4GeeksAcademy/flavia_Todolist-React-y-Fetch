@@ -1,0 +1,12 @@
+.headerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 4vw;
+  color: rgb(15, 44, 89);
+  margin-top: 5%;
+}

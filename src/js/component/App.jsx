@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import NewTask from "./NewTask";
 import TaskList from "./TaskList";
+import Header from "./Header";
+import "./app.css";
 
 //create your first component
 const App = () => {
@@ -90,6 +92,7 @@ const App = () => {
     <>
       <div className="bigContainer">
         <div className="littleContainer">
+          <Header />
           <NewTask
             prioridadSeleccionada={prioridadSeleccionada}
             textoInsertado={textoInsertado}

@@ -1,0 +1,21 @@
+.bigContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(220, 215, 201);
+  background-image: url("https://free4kwallpapers.com/uploads/originals/2015/09/17/vintage-yellow-flowers-tumblr.jpg");
+  background-size: 100% 100%; /* Ajustar la imagen al 100% del ancho y alto del div */
+  background-repeat: no-repeat; /* Evitar que la imagen se repita */
+  background-position: center;
+}
+.littleContainer {
+  width: 60vw;
+  height: 135vh;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding-bottom: 2%;
+  background-color: rgb(248, 240, 229);
+  border-radius: 20px;
+  color: rgb(15, 44, 89);
+  transition: background-color 2s ease-in-out;
+}

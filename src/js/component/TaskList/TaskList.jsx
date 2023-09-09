@@ -33,7 +33,6 @@ const TaskList = ({ list, numbersOfItems, handleDeleteItemClick }) => {
 
   return (
     <div className="toDo">
-      <div className="toDoTitle">TO DO LIST</div>
       <div className="toDoContent">
         <span>Number of tasks: {numbersOfItems}</span>
         <ul className="fa-ul">
