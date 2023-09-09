@@ -2,25 +2,13 @@ import React, { useState } from "react";
 import "./tasklist.css";
 import BotonSwitch from "../BotonSwitch";
 
-const TaskList = ({ list, numbersOfItems }) => {
+const TaskList = ({ list, numbersOfItems, handleDeleteItemClick }) => {
   const [showSwitches, setShowSwitches] = useState(false);
 
   const toggleSwitches = () => {
     setShowSwitches(!showSwitches);
   };
 
-  const getIconForTaskId = (taskId) => {
-    switch (taskId) {
-      case "high":
-        return <i className="fa-solid fa-triangle-exclamation"></i>;
-      case "medium":
-        return <i class="fa-solid fa-hand"></i>;
-      case "low":
-        return <i class="fa-solid fa-hourglass-start"></i>;
-      default:
-        return null;
-    }
-  };
   return (
     <div className="toDo">
       <div className="toDoTitle">TO DO LIST</div>
@@ -29,8 +17,14 @@ const TaskList = ({ list, numbersOfItems }) => {
         <ul className="fa-ul">
           {list.map((task, index) => (
             <li className="text" key={index}>
-              {getIconForTaskId(task.id)} {task.label}
-              {showSwitches && <BotonSwitch id={`cb${index}`} />}
+              <button
+                className="deleteButton"
+                onClick={() => handleDeleteItemClick(task.id)}
+              >
+                <i className="fa-regular fa-trash-can"></i>
+              </button>
+              {task.label}
+              {showSwitches && <BotonSwitch index={`cb${index}`} />}
             </li>
           ))}
         </ul>

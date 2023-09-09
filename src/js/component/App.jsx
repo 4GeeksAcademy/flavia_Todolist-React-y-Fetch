@@ -18,13 +18,12 @@ const App = () => {
   };
 
   const addItem = async () => {
+    const newItem = { label: textoInsertado, done: false, id: list.length + 1 };
+
     const options = {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify([
-        ...list,
-        { label: textoInsertado, done: false, id: opcionSeleccionada },
-      ]),
+      body: JSON.stringify([...list, newItem]),
     };
 
     const response = await fetch(
@@ -41,7 +40,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    getList(); // Llamar a getData al montar el componente
+    getList(); // Llamar a getList al montar el componente
   }, []);
 
   const handleOpcionChange = (event) => {
@@ -59,6 +58,28 @@ const App = () => {
     setTextoInsertado("");
   };
 
+  const handleDeleteItemClick = async (id) => {
+    // Filtra la lista para excluir el elemento con el ID especificado
+    const updatedList = list.filter((task) => task.id !== id);
+    setList(updatedList);
+
+    // Envía la lista actualizada a la API
+    const options = {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updatedList),
+    };
+
+    await fetch(
+      "https://playground.4geeks.com/apis/fake/todos/user/flavia",
+      options
+    ).then((response) => {
+      if (!response.ok) {
+        console.error("Error al actualizar la lista en la API");
+      }
+    });
+  };
+
   return (
     <>
       <div className="bigContainer">
@@ -70,7 +91,12 @@ const App = () => {
             handleInputChange={handleInputChange}
             handleButtonClick={handleButtonClick}
           />
-          <TaskList list={list} numbersOfItems={list.length} />
+          <TaskList
+            list={list}
+            setList={setList}
+            numbersOfItems={list.length}
+            handleDeleteItemClick={handleDeleteItemClick}
+          />
         </div>
       </div>
     </>
