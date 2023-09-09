@@ -6,8 +6,7 @@ const NewTask = ({
   textoInsertado,
   handleOpcionChange,
   handleInputChange,
-  getEntireList,
-  addItem,
+  handleButtonClick,
 }) => {
   return (
     <div className="inputsContainer">
@@ -41,9 +40,7 @@ const NewTask = ({
           className="submitButton btn"
           type="submit"
           value="Add"
-          onClick={() => {
-            addItem(textoInsertado)
-          }}
+          onClick={handleButtonClick}
         ></input>
       </div>
       {/* Fin del submit*/}

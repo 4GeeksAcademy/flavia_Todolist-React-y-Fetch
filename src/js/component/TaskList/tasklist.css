@@ -9,7 +9,7 @@
 .toDoTitle {
   font-family: "Raleway", sans-serif;
   font-size: 1vw;
-  color: rgba(255, 255, 255, 0.726);
+  color: rgb(28, 10, 0);
   height: 10%;
   margin-bottom: 2%;
 }
@@ -25,19 +25,11 @@
   padding-left: 2%;
   padding-top: 1%;
   word-wrap: break-word;
+  color: rgba(255, 255, 255, 0.726);
 }
 span {
   display: flex;
   justify-content: end;
   margin-right: 2vw;
-}
-.deleteButton {
-  visibility: hidden;
-}
-
-.text:hover .deleteButton {
-  visibility: visible;
-  border: none;
-  background-color: transparent;
-  color: rgb(205, 24, 24);
+  color: rgba(255, 255, 255, 0.726);
 }
