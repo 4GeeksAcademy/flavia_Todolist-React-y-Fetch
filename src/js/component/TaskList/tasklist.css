@@ -33,3 +33,7 @@ span {
   margin-right: 2vw;
   color: rgba(255, 255, 255, 0.726);
 }
+.text {
+  display: flex;
+  margin-bottom: 3%;
+}
