@@ -1,10 +1,13 @@
 .toDo {
-  display: block;
+  display: flex;
   margin-left: 10%;
   margin-right: 10%;
   height: 20%;
   margin-top: 2%;
   margin-bottom: 5%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .toDoTitle {
   font-family: "Raleway", sans-serif;
@@ -36,4 +39,14 @@ span {
 .text {
   display: flex;
   margin-bottom: 3%;
+}
+i {
+  margin-right: 2%;
+}
+
+.switchButton {
+  background-color: rgb(150, 182, 197);
+  border: none;
+  border-radius: 10px;
+  margin-top: 3%;
 }
