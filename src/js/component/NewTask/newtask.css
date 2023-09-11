@@ -4,14 +4,6 @@
   flex-direction: row;
   margin-top: 5%;
 }
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  .inputsContainer {
-    display: block;
-    margin-left: 10%;
-  }
-
-}
 
 select {
   background-color: rgb(15, 45, 89);
@@ -22,14 +14,6 @@ select {
   height: 6vh;
   color: rgba(255, 255, 255, 0.726);
   font-size: 15px;
-}
-@media (min-width: 1300px) and (min-height: 900px) {
-  select {
-    font-size: 2em; /* Ajusta el tamaño según tus necesidades */
-  }
-  .submitButton {
-    font-size: 2em;
-  }
 }
 .taskContent {
   border: #333333c0;
@@ -57,7 +41,25 @@ textarea:disabled {
 .submitButton:hover {
   background-color: rgba(149, 35, 35, 0.737);
 }
-
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .inputsContainer {
+    display: block;
+    margin-left: 10%;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1300px) {
+  select {
+    height: 4vh;
+  }
+  .taskContent{
+    max-height: 4vh;
+  }
+  .submitButton {
+    height: 4vh;
+  }
+}
 /* Anchura del scrollbar */
 .taskContent::-webkit-scrollbar {
   width: 12px;

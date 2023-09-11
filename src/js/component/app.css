@@ -9,9 +9,7 @@
   background-position: center;
 }
 .littleContainer {
-  margin-top: 2%;
-  margin-bottom: 2%;
-  padding-bottom: 2%;
+  padding-bottom: 5%;
   background-color: rgb(248, 240, 229);
   border-radius: 20px;
   color: rgb(15, 44, 89);
@@ -24,12 +22,17 @@
     height: 100vh;
   }
   .littleContainer {
-    width: 90%;
-    height: 85vh;
-    padding-bottom: 4%;
+    width: 85%;
+    height: 80%;
+    padding-bottom: 5%;
   }
 }
-
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .littleContainer {
+    padding-bottom: 2%;
+  }
+}
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   .bigContainer {
@@ -39,7 +42,7 @@
   .littleContainer {
     width: 90%;
     height: 85vh;
-    padding-bottom: 4%;
+    padding-bottom: 3%;
   }
 }
 /* Large devices (laptops/desktops, 992px and up) */
@@ -56,7 +59,7 @@
   }
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1300px) {
   .littleContainer {
     width: 30%;
     height: 80%;

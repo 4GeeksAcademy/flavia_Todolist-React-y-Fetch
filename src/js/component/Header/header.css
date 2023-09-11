@@ -10,3 +10,10 @@
   color: rgb(15, 44, 89);
   margin-top: 5%;
 }
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .title {
+    font-size: 2vw;
+  }
+}
