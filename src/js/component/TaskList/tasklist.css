@@ -34,6 +34,7 @@ span {
 .text {
   display: flex;
   margin-bottom: 3%;
+  align-items: center;
 }
 i {
   margin-right: 2%;
@@ -55,4 +56,8 @@ i {
   border: none;
   background-color: transparent;
   color: rgb(205, 24, 24);
+}
+
+.divSwitch {
+  width: 20%;
 }

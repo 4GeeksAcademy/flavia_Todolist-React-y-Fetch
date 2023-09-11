@@ -3,7 +3,14 @@
   justify-content: center;
   flex-direction: row;
   margin-top: 5%;
-  height: 6vh;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .inputsContainer {
+    display: block;
+    margin-left: 10%;
+  }
+
 }
 
 select {

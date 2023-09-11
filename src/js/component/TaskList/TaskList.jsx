@@ -21,11 +21,15 @@ const TaskList = ({ list, numbersOfItems, handleDeleteItemClick }) => {
   const getIconForTaskPriority = (priority) => {
     switch (priority) {
       case "high":
-        return <i className="fa-solid fa-triangle-exclamation"></i>;
+        return (
+          <i className="fa-solid fa-triangle-exclamation ms-4 text-danger"></i>
+        );
       case "medium":
-        return <i className="fa-solid fa-hand"></i>;
+        return <i className="fa-solid fa-hand ms-4 text-warning-emphasis"></i>;
       case "low":
-        return <i className="fa-solid fa-hourglass-start"></i>;
+        return (
+          <i className="fa-solid fa-hourglass-start ms-4 text-success"></i>
+        );
       default:
         return null;
     }
@@ -38,16 +42,17 @@ const TaskList = ({ list, numbersOfItems, handleDeleteItemClick }) => {
         <ul className="fa-ul">
           {list.map((task, index) => (
             <li className="text" key={index}>
-              {showSwitches && (
-                <BotonSwitch
-                  index={`cb${index}`}
-                  isChecked={switchStates[index]}
-                  handleToggle={() => handleSwitchToggle(index)}
-                />
-              )}
+              <div className="divSwitch">
+                {showSwitches && (
+                  <BotonSwitch
+                    index={`cb${index}`}
+                    isChecked={switchStates[index]}
+                    handleToggle={() => handleSwitchToggle(index)}
+                  />
+                )}
+              </div>
               {task.label}
               {getIconForTaskPriority(task.priority)}
-              {console.log(task.priority)}
               <button
                 className="deleteButton"
                 onClick={() => handleDeleteItemClick(task.id)}
