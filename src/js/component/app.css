@@ -23,7 +23,6 @@
   }
   .littleContainer {
     width: 85%;
-    height: 80%;
     padding-bottom: 5%;
   }
 }
@@ -51,7 +50,7 @@
     background-size: cover; /* Ajustar la imagen al 100% del ancho y alto del div */
   }
   .littleContainer {
-    width: 35%;
+    width: 40%;
     height: 90%;
     margin-top: 1%;
     margin-bottom: 1%;

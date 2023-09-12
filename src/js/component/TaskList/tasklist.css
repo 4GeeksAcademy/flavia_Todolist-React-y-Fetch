@@ -17,7 +17,6 @@
   border-radius: 10px;
   overflow-y: auto;
   font-family: "Raleway", sans-serif;
-  font-size: 0.85vw;
   padding-top: 3%;
   word-wrap: break-word;
   color: rgb(15, 44, 89);
@@ -68,7 +67,37 @@ i {
 .divSwitch {
   width: 20%;
 }
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .toDoContent,
+  .deleteButton {
+    font-size: 0.85rem;
+  }
+  .divSwitch {
+    width: 25%;
+  }
+}
 
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .toDoContent,
+  .deleteButton {
+    font-size: 0.85rem;
+  }
+  .divSwitch {
+    width: 25%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .toDoContent {
+    font-size: 1.5rem;
+  }
+  .text {
+    height: 2vh;
+  }
+}
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   .toDo {
@@ -76,6 +105,10 @@ i {
   }
   .toDoContent {
     height: 95%;
+    font-size: 1rem;
+  }
+  .text {
+    height: 5vh;
   }
 }
 
@@ -86,5 +119,9 @@ i {
   }
   .toDoContent {
     height: 95%;
+    font-size: 0.85vw;
+  }
+  .text {
+    height: 3vh;
   }
 }

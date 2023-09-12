@@ -54,7 +54,7 @@ const TaskList = ({ list, numbersOfItems, handleDeleteItemClick }) => {
   return (
     <div className="toDo">
       <div className="toDoContent">
-        <div className="d-flex justify-content-between ms-3 me-3">
+        <div className="d-flex justify-content-between ms-3 me-3 mb-2">
           <span>Number of tasks: {numbersOfItems}</span>
           <button
             className="sortButton"

@@ -24,9 +24,7 @@ select {
   color: rgba(255, 255, 255, 0.726);
   background-color: rgb(15, 45, 89);
   resize: vertical;
-  max-height: 6vh;
-  max-width: 15vw;
-  margin-left: 7%;
+  height: 6vh;
 }
 textarea:disabled {
   background-color: rgba(15, 45, 89, 0.667);
@@ -44,8 +42,43 @@ textarea:disabled {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .inputsContainer {
-    display: block;
-    margin-left: 10%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .taskContent {
+    width: 40vw;
+    margin-top: 2%;
+    font-size: 4vw;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .taskContent {
+    max-height: 6vh;
+    max-width: 15vw;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .taskContent {
+    height: 10vh;
+    width: 30vw;
+    margin-left: 2vw;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .taskContent {
+    height: 10vh;
+    width: 20vw;
+    margin-left: 0.5vw;
+  }
+  .submitButton {
+    margin-left: 0.5vw;
   }
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -53,11 +86,13 @@ textarea:disabled {
   select {
     height: 4vh;
   }
-  .taskContent{
+  .taskContent {
     max-height: 4vh;
+    margin-left: 1vw;
   }
   .submitButton {
     height: 4vh;
+    margin-left: 1vw;
   }
 }
 /* Anchura del scrollbar */
