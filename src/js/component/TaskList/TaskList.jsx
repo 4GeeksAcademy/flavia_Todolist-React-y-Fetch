@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./tasklist.css";
 import BotonSwitch from "../BotonSwitch";
 
 const TaskList = ({ list, numbersOfItems, handleDeleteItemClick }) => {
   const [showSwitches, setShowSwitches] = useState(false);
+  const [sortedList, setSortedList] = useState([...list]);
+  const [sortByPriority, setSortByPriority] = useState(false);
 
   const toggleSwitches = () => {
     setShowSwitches(!showSwitches);
@@ -35,12 +37,34 @@ const TaskList = ({ list, numbersOfItems, handleDeleteItemClick }) => {
     }
   };
 
+  useEffect(() => {
+    if (sortByPriority) {
+      const sorted = [...list];
+      sorted.sort((a, b) => {
+        const priorityOrder = { high: 3, medium: 2, low: 1 };
+        return priorityOrder[b.priority] - priorityOrder[a.priority];
+      });
+      setSortedList(sorted);
+    } else {
+      // Si no se ordena, muestra la lista original
+      setSortedList([...list]);
+    }
+  }, [list, sortByPriority]);
+
   return (
     <div className="toDo">
       <div className="toDoContent">
-        <span>Number of tasks: {numbersOfItems}</span>
-        <ul className="fa-ul">
-          {list.map((task, index) => (
+        <div className="d-flex justify-content-between ms-3 me-3">
+          <span>Number of tasks: {numbersOfItems}</span>
+          <button
+            className="sortButton"
+            onClick={() => setSortByPriority(!sortByPriority)}
+          >
+            {sortByPriority ? "Original order" : "Order by Priority"}{" "}
+          </button>
+        </div>
+        <ul>
+          {sortedList.map((task, index) => (
             <li className="text" key={index}>
               <div className="divSwitch">
                 {showSwitches && (
